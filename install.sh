@@ -103,7 +103,7 @@ install_v2-ui() {
     wget -N --no-check-certificate -O /usr/local/v2-ui-linux.tar.gz wget https://github.com/sprov065/v2-ui/releases/download/5.2.1/v2-ui-linux.tar.gz
     if [[ $? -ne 0 ]]; then
         echo -e "${red}下载v2-ui失败，请确保你的服务器能够下载Github的文件，如果多次安装失败，请参考手动安装教程${plain}"
-        wget https://github.com/sprov065/v2-ui/releases/download/5.2.1/v2-ui-linux.tar.gz 1
+        ?wget https://github.com/sprov065/v2-ui/releases/download/5.2.1/v2-ui-linux.tar.gz 1
     fi
     tar zxvf v2-ui-linux.tar.gz
     rm v2-ui-linux.tar.gz -f
