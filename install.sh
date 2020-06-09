@@ -98,7 +98,7 @@ install_v2-ui() {
     if [[ -e /usr/local/v2-ui/ ]]; then
         rm /usr/local/v2-ui/ -rf
     fi
-    last_version=$(curl -Ls "https://api.github.com/repos/sprov065/v2-ui/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+    last_version=$(curl -Ls "https://github.com/sprov065/v2-ui/releases/download/5.2.1/v2-ui-linux.tar.gz" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     echo -e "检测到v2-ui最新版本：${last_version}，开始安装"
     wget -N --no-check-certificate -O /usr/local/v2-ui-linux.tar.gz https://github.com/sprov065/v2-ui/releases/download/${last_version}/v2-ui-linux.tar.gz
     if [[ $? -ne 0 ]]; then
