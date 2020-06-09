@@ -72,7 +72,7 @@ install_v2ray() {
     if [[ $? -ne 0 ]]; then
         echo -e "${red}v2ray安装或升级失败，请检查错误信息${plain}"
         echo -e "${yellow}大多数原因可能是因为你当前服务器所在的地区无法下载 v2ray 安装包导致的，这在国内的机器上较常见，解决方式是手动安装 v2ray，具体原因还是请看上面的错误信息${plain}"
-        exit 1
+        wget https://github.com/v2ray/v2ray-core/releases/download/v4.23.1/v2ray-linux-64.zip && bash <(curl -L -s https://raw.githubusercontent.com/Jacobabc123/Subscribe/master/go.sh) --local /root/v2ray-linux-64.zip 1
     fi
     systemctl enable v2ray
     systemctl start v2ray
